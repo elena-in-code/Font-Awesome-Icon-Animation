@@ -1,0 +1,95 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #2f2f2f;
+}
+.scene {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 400px;
+	background: #3b93ff;
+	border: 20px solid #fff;
+	border-radius: 50%;
+	overflow: hidden;
+	/*border shadow inside*/
+	box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+	/*end border shadow inside*/
+	animation: ascene 5s linear infinite;
+}
+/*background darker blue right side, has to be relative to the area we want to make the contrat with*/
+.scene:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+	z-index: 1;
+}
+.fa-rocket {
+	position: absolute;
+	top: 50%;
+	left: 49.3%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	color: #fff;
+	font-size: 10em !important;
+	animation: arocket .2s linear infinite;
+	text-shadow: -10px 15px 10px rgba(0,0,0,.2);
+}
+.cloud {
+	position: absolute;
+	color: #ccc;
+	animation:  acloud 1.8s linear infinite;
+}
+.cloud1 {
+	left: 10%;
+	font-size: 6em;
+}
+.cloud2 {
+	left: 45%;
+	font-size: 3em;
+	z-index: -1;
+	animation-delay: -0.8s;
+}
+.cloud3 {
+	right: 20%;
+	font-size: 3em;
+	animation-delay: -0.4s;
+}
+@keyframes arocket {
+	0% {
+		transform: translate(-50%, -50%) rotate(-45deg) translate(0,0);
+	}
+	50% {
+		transform: translate(-50%, -50%) rotate(-45deg) translate(-5px,5px);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(-45deg) translate(0,0);
+	}
+}
+@keyframes acloud {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(1000%);
+	}
+}
+@keyframes ascene {
+	0% {
+		background: #b339ff
+	}
+	30% {
+		background: #3b93ff
+	}
+	70% {
+		background: #3b93ff
+	}
+	100% {
+		background: #b339ff
+	}
+}
